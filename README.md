@@ -105,6 +105,10 @@ The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 
 
 ### CRISP-DM Method
 
+
+![CRISP-DM](readme_assets/CRISP_DM.jpg)
+
+
 CRISP-DM methodology widely used in data mining and AI development. Method provides structured approach to planning project. There are six phases:
     1. Business Understanding: here objectives and requirements are defined. Understanding of the problem and setting goals that the project should achieve.
     2. Data Understanding: data collected and explored so we have more understanding of data.
@@ -114,18 +118,17 @@ CRISP-DM methodology widely used in data mining and AI development. Method provi
     6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
 
 
-![CRISP-DM](readme_assets/CRISP_DM.jpg)
 
 ### Model
 
 Creating model and settind hyperparameters with hidden layers been achieved with trial and error way.
 This structure appear in my case best one according to my goals
 
-Model should predict on new dataset if leaf infected or not with 97% accuracy.
+- Model should predict on new dataset if leaf infected or not with 97% accuracy.
 
-Model should save company time, resources and money as this process is manual at the moment.
+- Model should save company time, resources and money as this process is manual at the moment.
 
-Model should use as less computational power as possible while still providing correct prediction
+- Model should use as less computational power as possible while still providing correct prediction
 
 
 
@@ -278,16 +281,16 @@ Business requirements #3
 # Deployment
 
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+1. Create runtime.txt Python version that supported by Heroku
+2. Create requirements.txt file that lists all dependencies that program needs to run
+3. Log In to your Heroku Account
+4. Choose "Create New App" 
+5. Add Python buildpack in settings tab
+6. Choose Github deployment method and connect project repository
+7. Choose branch you want to deploy and click Deploy Branch
+8. Select Automatic Deploys or Manual Deploy
+9. Once deployed you will see link where you can access your app.
+
 
 
 ## Forking
@@ -312,6 +315,25 @@ Business requirements #3
 
 
 # Credits
+
+- Leaves dataset was downloaded from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) and created by [Code Institute](https://www.kaggle.com/codeinstitute)
+- Fungus description taken from [RHS](https://www.rhs.org.uk/disease/powdery-mildews) and [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew#:~:text=Powdery%20mildew%20is%20one%20of,ground%20part%20of%20the%20plant.
+-)
+- CRISP-DM steps taken from [Think Insights](https://thinkinsights.net/data/crisp-dm/)
+
+
+- Template for this project belongs to [CodeInstitute](https://codeinstitute.net/)
+- Jupiter notebooks and pages for Dashboard are from [CodeInstitute Walkthrough](https://github.com/GyanShashwat1611/WalkthroughProject01)
+
+
+
+# Acknowledgements
+
+I want to say Thank you to [Code Institue](https://codeinstitute.net/) and my mentor Rohit Sharma
+
+
+
+
 
 
 
