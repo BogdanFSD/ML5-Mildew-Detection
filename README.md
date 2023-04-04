@@ -205,6 +205,22 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 
 
+# Technologies used
+
+- [Heroku](https://www.heroku.com/) To deploy this project
+- [Jupiter Notebook](https://jupyter.org/)
+- [Gitpod](https://www.gitpod.io/)
+- [Kaggle](https://www.kaggle.com/) 
+- [Python](https://www.python.org/)
+- [Numpy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Plotly](https://plotly.com/)
+- [Tensorflow](https://www.tensorflow.org/)
+- [Matplotlib](https://matplotlib.org/)
+
+
+
+
 # Deployment
 
 
@@ -222,26 +238,22 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 ## Forking
 
-
--
--
--
--
+- Find reposirory you are [interested](https://github.com/BogdanFSD/ML5-Mildew-Detection) in.
+- Find button "Fork" near top right corner and click on it
+- Choose where to fork it
+- You successfully forked a repo
 
 
 
 ## Cloning repo
 
--
--
--
--
--
--
-
-
-# Technologies used
-
+- Find reposirory you are [interested](https://github.com/BogdanFSD/ML5-Mildew-Detection) in.
+- Than find button "Clone" and click on it
+- Choose "Local" and find option that suits you: HTTPS, Download ZIP, Open with GitHub Desktop
+- If you choose HTTPS link than copy a link
+- Open you terminal with preinstalled Bash
+- Decide where you want store new repo
+- Type git clone https://github.com/BogdanFSD/ML5-Mildew-Detection and hit Enter
 
 
 
