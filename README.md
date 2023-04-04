@@ -281,7 +281,7 @@ Business requirements #3
 # Deployment
 
 
-1. Create runtime.txt Python version that supported by Heroku
+1. Create runtime.txt Python version that supported by Heroku-22
 2. Create requirements.txt file that lists all dependencies that program needs to run
 3. Log In to your Heroku Account
 4. Choose "Create New App" 
