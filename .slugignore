@@ -1,6 +1,12 @@
 *.zip
-/inputs/cherryleaves_data/cherry-leaves/test/healthy/*
-/inputs/cherryleaves_data/cherry-leaves/test/powdery_mildew/*
-/inputs/cherryleaves_data/cherry-leaves/train/healthy/*
-/inputs/cherryleaves_data/cherry-leaves/train/powdery_mildew/*
-/inputs/cherry_leaves_data/cherry-leaves/validation/*
+inputs/cherryleaves_data/cherry-leaves/test/healthy/*
+inputs/cherryleaves_data/cherry-leaves/test/powdery_mildew/*
+inputs/cherryleaves_data/cherry-leaves/train/healthy/*
+inputs/cherryleaves_data/cherry-leaves/train/powdery_mildew/*
+inputs/cherryleaves_data/cherry-leaves/validation/*
+
+readme_assets/*
+README.md
+.gitpod.dockerfile
+.gitpod.yml
+app_pages/__pycache__/*
