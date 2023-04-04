@@ -100,8 +100,20 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 ## The rationale for the model
 
+### CRISP-DM Method
 
-# What I want to achieve
+CRISP-DM methodology widely used in data mining and AI development. Method provides structured approach to planning project. There are six phases:
+    1. Business Understanding: here objectives and requirements are defined. Understanding of the problem and setting goals that the project should achieve.
+    2. Data Understanding: data collected and explored so we have more understanding of data.
+    3. Data Preparation: Data is cleaned , transformed and prepared for analysis and modeling
+    4. Modeling: different rechnique applied to the data and results are evaluated for efectiveness for meeting our goals
+    5. Evaluation: model results are evaluated if they met project objectives. Assessing accuracy, reliability, validity and if model suitable for deployment.
+    6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
+
+
+![CRISP-DM](readme_assets/CRISP_DM.jpg)
+
+### What I want to achieve
 
 -
 -
@@ -109,7 +121,7 @@ System is capable of detecting differences in our leaves dataset so our learning
 -
 
 
-# Which hyperparameters I choose
+### Which hyperparameters I choose
 
 - layers
 - number of neurons
@@ -172,55 +184,34 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 
 
-
-
-
-
-
-## Page 1: Quick Project Summary
-
--
--
--
--
-
-
 ## Page 2: leaves Visualizer
 
+It will answer business requirement #1
+- Checkbox 1 - Difference between average and variability image
+- Checkbox 2 - Differences between average parasitised and average uninfected leaves
+- Checkbox 3 - Image Montage
 
--
--
--
 
 ## Page 3: Powdery mildew Detector
 
+Business requirements #2
+- The client is interested in predicting if a cherry tree is healthy or contains powdery mildew.
+- Download a set of infected or healthy leaves images from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
+- User Interface wit ha file iploader widget. The user can upload multiple cherry leaves images. It will display the image, a barplot of the visual representation of the prediction and the prediction statement, indicating if the leaf is infected or not with powdery mildew and the probability associated with this statement.
+- Table with the image name and prediction results.
+- Download button to download the report.
 
--
--
--
--
--
 
 # Page 4: Project Hypothesis and Validation
 
+- Bloack for each project hypothesis, describe the conclusion and how you validated.
 
--
--
---
--
--
 
 # Page 5: ML Performance Metrics
 
-
--
--
--
--
--
--
-
-
+- Label Frequencies for Train, Validation and Test Sets
+- Model History - Accuracy and Losses
+- Model evaluation resul
 
 
 # Technologies used
