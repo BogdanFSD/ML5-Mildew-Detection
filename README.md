@@ -157,6 +157,24 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 # Dashboard Design (Streamlit App User Interface)
 
+##  Page 1: Quick Project Summary
+- Quick project summary
+    - General information
+        - **Powdery Mildew** is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of ascomycete fungi. Infected plants display white powdery spots on the leaves and stems. The lower leaves are the most affected 
+        - Typical symptoms are : white patches of fungal growth develop on the lower surface of the leaf, leaf edges curl upwards, exposing the white, powdery fungal growth, purple to reddish blotches may also develop on leaves
+    - Project Dataset
+        - Provided by customer Farmy & Foods which contains 4208 photos of cherry leaves. Include both healthy and infected
+    - Business requirements
+        - Customer interested to visually differentiate between healthy and infected leaf
+        - Customer interested if peaf is infected by Powdery Mildew
+        - Customer interested in prediction report of the dataset
+
+
+
+
+
+
+
 
 
 ## Page 1: Quick Project Summary
