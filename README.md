@@ -89,15 +89,12 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 ### Hypothesis 2
 
----
+Change color to grey
 
 
 ### hypothesis 3
 
-
-
----
-
+if we put images upside down
 
 # Rationale to map the business requirements to the Data Visualizations and ML tasks
 
