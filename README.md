@@ -1,98 +1,253 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Project look](###)
 
-## Gitpod Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use. 
-
-## Gitpod Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Table of Contents
+1. [Dataset Content](#dataset-content)
+2. [Business Requirements](#business-requirements)
+3. [Hypothesis and validation](#hypothesis-and-validation)
+4. [Rationale for the model](#the-rationale-for-the-model)
+5. [Trial and error](#trial-and-error)
+6. [Implementation of the Business Requirements](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
+7. [ML Business case](#ml-business-case)
+8. [Dashboard design](#dashboard-design-streamlit-app-user-interface)
+9. [CRISP DM Process](#the-process-of-cross-industry-standard-process-for-data-mining)
+10. [Bugs](#bugs)
+11. [Deployment](#deployment)
+12. [Technologies used](#technologies-used)
+13. [Credits](#credits)
 
 
-## Dataset Content
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-* The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
+## App deployed hete [ml5-mildew-detection_herokuapp](LINK)
+
+# Dataset Content
+
+- Dataset consist of 4208 photos of cherry leaves both healthy and infected with [fungus](https://en.wikipedia.org/wiki/Powdery_mildew). Disease that affect wide range of plants however client interested in Cherry Trees mostly. All images taken from Farmy & Foods. Customer is concerned about supplying compromised quality product. 
+- Dataset located at [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
+- This project based on fictious story to apply machine learning algorithms to solve problem which later on could be used in real world scenario.
 
 
 ## Business Requirements
-The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute.  The company has thousands of cherry trees, located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
 
-To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+Our customer Farmy & Foods contacted us to resolve non trivial issue in agricultural sector. And we are trying to create Machine Learning system that can help. Core problem is cherry leaves that are infected by fungus (Powdery Mildew). At the moment this process takes around 30 minutes per tree. Infected trees treated with fungicide. Due to size of customers (thousands trees all over the country) this process could be time consuming. In order to increase efficiency one of the solutions is Machine Learning model. Our system should make a decision based on an image of cherry leaves and give answer whether it is "Healthy" or "Infected"
 
+- Customer interested in app that can:
 
-* 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
-* 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
-
-
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
+1.  Visually differentiate healthy leaf from infected by powdery mildew
+2.  Predicting base on image, if leaf infected or healthy
 
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+## Hypothesis and validation
+
+1. *Hypothesis:* Leaves that are infected have marks compare to heathy ones
+    - **Validation** Understand of how Powdery Mildew look like.
+
+2. *Hypothesis:* Which model better to choose
+    - **Validation** depends on the problem I solve
+
+3. *Hypothesis:* When it perfomed better
+    - **Validation** colors, filters algorithms.
 
 
-## ML Business Case
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Hypothesis 1 
+
+> Leaves that are infected have marks compare to heathy ones
+
+If leaf is infected by Powdery Mildev we would see some classical marks as: pale yellow leaf spots, round lesions on either side which will develope to white powdery spots on the leaves. This understanding we should provide to our system. But how? Firstly, we need transform, split and basically prepare our data for learning for  best learning outcome.
+
+Once we know we should prepare our dataset by normalization **before** training our model. In order to normalize our images we need to calculate meand and standart deviation for our images. **Mean** is dividing the sum of pixel values by the total number of pixel in dataset. **Standart deviation** basically tell us how bright or dark image is. Brighter image is more "busy" it is, if standart deviation is lov that means brightness of the picture is similar across picture. We do that with some mathematical calculation.
+
+---
+We can spot difference between healthy ad infected leaf based on this image montage.
+
+![healthy_leaves](readme_assets/image_montage_healthy.png)
+![infected_leaves](readme_assets/image_montage_powdery_mildew.png)
 
 
-## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-* Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+---
 
 
-## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
-
-## Deployment
-### Heroku
-
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file. 
+Lookig at avarage and variability images we can spot more white spotes and lines on the infected leaves
 
 
-## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+![healthy_leaves](outputs/v1/avg_var_healthy.png)
+![healthy_leaves](outputs/v1/avg_var_powdery_mildew.png)
 
 
-## Credits 
+---
 
-* In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
-### Content 
+On the other hand no visual differenceson avarage infected and healthy leaves here
 
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+![healthy_leaves](outputs/v1/avg_diff.png)
 
-### Media
+---
 
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
+
+System is capable of detecting differences in our leaves dataset so our learning outcome would be high. This is important step as we making sure that our model can understand patterns and features so we can make predictions for new data but with same problem.
+
+
+### Hypothesis 2
+
+---
+
+
+### hypothesis 3
 
 
 
-## Acknowledgements (optional)
-* Thank the people that provided support throughout this project.
+---
+
+
+## The rationale for the model
+
+
+# What I want to achieve
+
+-
+-
+-
+-
+
+
+# Which hyperparameters I choose
+
+- layers
+- number of neurons
+- kernel size
+- activation function (not sigmoid)
+- output
+- dropout
+
+## layers
+
+## model creation
+
+
+
+
+# Rationale to map the business requirements to the Data Visualizations and ML tasks
+
+
+## Business Requirement 1: Data Visualization
+
+- User Story
+
+
+## Business Requirement 2: Classification
+
+- User Story
+
+
+## Business Requirement 3: Report
+- User Story
+
+
+
+# ML Business Case
+
+## Powdery Mildew Detection
+
+-
+-
+-
+-
+-
+
+
+
+# Dashboard Design (Streamlit App User Interface)
+
+
+
+## Page 1: Quick Project Summary
+
+-
+-
+-
+-
+
+
+## Page 2: leaves Visualizer
+
+
+-
+-
+-
+
+## Page 3: Powdery mildew Detector
+
+
+-
+-
+-
+-
+-
+
+# Page 4: Project Hypothesis and Validation
+
+
+-
+-
+--
+-
+-
+
+# Page 5: ML Performance Metrics
+
+
+-
+-
+-
+-
+-
+-
+
+
+
+
+# Deployment
+
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+
+
+## Forking
+
+
+-
+-
+-
+-
+
+
+
+## Cloning repo
+
+-
+-
+-
+-
+-
+-
+
+
+# Technologies used
+
+
+
+
+# Credits
+
+
+
+
+
