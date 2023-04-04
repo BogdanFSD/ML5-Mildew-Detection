@@ -21,19 +21,20 @@
 
 # Dataset Content
 
-- Dataset consist of 4208 photos of cherry leaves both healthy and infected with [fungus](https://en.wikipedia.org/wiki/Powdery_mildew). Disease that affect wide range of plants however client interested in Cherry Trees mostly. All images taken from Farmy & Foods. Customer is concerned about supplying compromised quality product. 
+- Dataset consist of 4208 photos of cherry leaves both healthy and infected with [fungus](https://en.wikipedia.org/wiki/Powdery_mildew). Disease that affect wide range of plants however client interested in Cherry Trees mostly. All images taken from Farmy & Foody. Customer is concerned about supplying compromised quality product. 
 - Dataset located at [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
 - This project based on fictious story to apply machine learning algorithms to solve problem which later on could be used in real world scenario.
 
 
 ## Business Requirements
 
-Our customer Farmy & Foods contacted us to resolve non trivial issue in agricultural sector. And we are trying to create Machine Learning system that can help. Core problem is cherry leaves that are infected by fungus (Powdery Mildew). At the moment this process takes around 30 minutes per tree. Infected trees treated with fungicide. Due to size of customers (thousands trees all over the country) this process could be time consuming. In order to increase efficiency one of the solutions is Machine Learning model. Our system should make a decision based on an image of cherry leaves and give answer whether it is "Healthy" or "Infected"
+Our customer Farmy & Foody contacted us to resolve non trivial issue in agricultural sector. And we are trying to create Machine Learning system that can help. Core problem is cherry leaves that are infected by fungus (Powdery Mildew). At the moment this process takes around 30 minutes per tree. Infected trees treated with fungicide. Due to size of customers (thousands trees all over the country) this process could be time consuming. In order to increase efficiency one of the solutions is Machine Learning model. Our system should make a decision based on an image of cherry leaves and give answer whether it is "Healthy" or "Infected"
 
 - Customer interested in app that can:
 
-1.  Visually differentiate healthy leaf from infected by powdery mildew
-2.  Predicting base on image, if leaf infected or healthy
+1.  Visually differentiate healthy leaf from infected by powdery mildew.
+2.  Predicting base on image, if leaf infected or healthy.
+3.  Receiving prediction report of leaves.
 
 
 ## Hypothesis and validation
@@ -98,7 +99,9 @@ System is capable of detecting differences in our leaves dataset so our learning
 ---
 
 
-## The rationale for the model
+# Rationale to map the business requirements to the Data Visualizations and ML tasks
+
+The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 output layer.
 
 ### CRISP-DM Method
 
@@ -113,12 +116,17 @@ CRISP-DM methodology widely used in data mining and AI development. Method provi
 
 ![CRISP-DM](readme_assets/CRISP_DM.jpg)
 
-### What I want to achieve
+### Model
 
--
--
--
--
+Creating model and settind hyperparameters with hidden layers been achieved with trial and error way.
+This structure appear in my case best one according to my goals
+
+Model should predict on new dataset if leaf infected or not with 97% accuracy.
+
+Model should save company time, resources and money as this process is manual at the moment.
+
+Model should use as less computational power as possible while still providing correct prediction
+
 
 
 ### Which hyperparameters I choose
@@ -131,39 +139,76 @@ CRISP-DM methodology widely used in data mining and AI development. Method provi
 - dropout
 
 ## layers
-
+-
+-
+-
+-
 ## model creation
 
+-
+-
+-
+-
 
-
-
-# Rationale to map the business requirements to the Data Visualizations and ML tasks
 
 
 ## Business Requirement 1: Data Visualization
 
-- User Story
+> Visually differentiate healthy leaf from infected by powdery mildew
+
+**User Story**
+
+- As a User I want interactive, easy to navigate and clear dashboard so I can understand data. 
+- As a User I want to display avarage and variability image so I can differentiate healthy and infected leaves
+- As a User I want to display difference between average healthy and infected leaf, so I can visually diffferentiate them
+- As a User I want to display images for healthy and infected leaves so I can visually differentiate them
+
+All User stories been implemented in development Dashboard:
+
+* Easy navigating side bar
+* Displaying difference of avarage healthy and infected leaves.
+* Displaying avarage variability of the healthy and infected leaves.
+* Image montage of the leaves
 
 
 ## Business Requirement 2: Classification
 
-- User Story
+>Predicting base on image, if leaf infected or healthy.
+
+**User Story**
+
+- As a user I want model that oredicts with 97% of accuracy if leaf is healthy or infected.
+
+User story is implemented in Dashboard:
+
+* User can upload own set of images with the help of created widget to receive prediction. (Max size of the file is 200MB)
 
 
 ## Business Requirement 3: Report
-- User Story
+
+
+> Receiving prediction report of leaves.
+
+**User Story** 
+
+- As a User I want to receive report of the predictions on new data.
+
+User story in implemented in Dashboard:
+
+* Every new dataset of images new report would be generated with prediction.
 
 
 
 # ML Business Case
 
-## Powdery Mildew Detection
 
--
--
--
--
--
+- Machine Learning model should be able to predict on given dataset of cherry leves if they are infected or healthy. Based on this information we consider this problem as supervised model, with 2-class, single-label, classification
+- Outcome of the model to provide better and faster way of predicting whether leaf is healthy of infected
+- Model accuracy of 97% or above
+- The model output is defined as a flag, indicating if the leaf contains any feature that can show that the tree is infected. Owner of the plantation will take a picture of some leaves of the tree and upload them to the App.
+- Heuritics: Current method of detection is labour based. Every tree takes around 30 minutes to inspect and taking samples. This way of inspection have high human error and time consuming.
+- Dataset provided by Farmy & Foody tha contains 4208 images of cherry leaves. Could be download at [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
+
 
 
 
@@ -175,13 +220,11 @@ CRISP-DM methodology widely used in data mining and AI development. Method provi
         - **Powdery Mildew** is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of ascomycete fungi. Infected plants display white powdery spots on the leaves and stems. The lower leaves are the most affected 
         - Typical symptoms are : white patches of fungal growth develop on the lower surface of the leaf, leaf edges curl upwards, exposing the white, powdery fungal growth, purple to reddish blotches may also develop on leaves
     - Project Dataset
-        - Provided by customer Farmy & Foods which contains 4208 photos of cherry leaves. Include both healthy and infected
+        - Provided by customer Farmy & Foody which contains 4208 photos of cherry leaves. Include both healthy and infected
     - Business requirements
         - Customer interested to visually differentiate between healthy and infected leaf
         - Customer interested if peaf is infected by Powdery Mildew
         - Customer interested in prediction report of the dataset
-
-
 
 
 ## Page 2: leaves Visualizer
@@ -196,9 +239,11 @@ It will answer business requirement #1
 
 Business requirements #2
 - The client is interested in predicting if a cherry tree is healthy or contains powdery mildew.
+Business requirements #3
+- The client wants to receive report of the prediction.
 - Download a set of infected or healthy leaves images from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
 - User Interface wit ha file iploader widget. The user can upload multiple cherry leaves images. It will display the image, a barplot of the visual representation of the prediction and the prediction statement, indicating if the leaf is infected or not with powdery mildew and the probability associated with this statement.
-- Table with the image name and prediction results.
+- Report that contain table with the image name and prediction results.
 - Download button to download the report.
 
 
