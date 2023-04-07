@@ -142,6 +142,13 @@ This structure appear in my case best one according to my goals
 
 # hidden layers activation function https://wandb.ai/shweta/Activation%20Functions/reports/Activation-Functions-Compared-With-Experiments--VmlldzoxMDQwOTQ SWISH in particular outperform relu
 
+
+# https://stackoverflow.com/questions/41908379/keras-plot-training-validation-and-test-set-accuracy  / plot
+
+# https://towardsdatascience.com/loss-functions-and-their-use-in-neural-networks-a470e703f1e9#:~:text=The%20most%20commonly%20used%20loss,of%20the%20pre%2Dset%20categories. / losses
+
+# difference between categorical and binary cross entropy https://stackoverflow.com/questions/52965686/difference-between-categorical-and-binary-cross-entropy
+
 ## layers
 -
 -
