@@ -136,9 +136,11 @@ This structure appear in my case best one according to my goals
 - layers
 - number of neurons
 - kernel size
-- activation function (not sigmoid)
+- activation function (not sigmoid) 
 - output
 - dropout
+
+# hidden layers activation function https://wandb.ai/shweta/Activation%20Functions/reports/Activation-Functions-Compared-With-Experiments--VmlldzoxMDQwOTQ SWISH in particular outperform relu
 
 ## layers
 -
