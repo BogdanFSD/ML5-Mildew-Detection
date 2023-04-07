@@ -42,8 +42,8 @@ Our customer Farmy & Foody contacted us to resolve non trivial issue in agricult
 1. *Hypothesis:* Leaves that are infected have marks compare to heathy ones
     - **Validation** Understand of how Powdery Mildew look like.
 
-2. *Hypothesis:* Which model better to choose
-    - **Validation** depends on the problem I solve
+2. *Hypothesis:* Which activation functions perfoms better and why for our task
+    - **Validation** Understand how each of trained functions working and perfoming whie training.
 
 3. *Hypothesis:* When it perfomed better
     - **Validation** colors, filters algorithms.
@@ -89,7 +89,9 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 ### Hypothesis 2
 
-Change color to grey
+> Which activation functions perfoms better and why for our task
+
+
 
 
 ### hypothesis 3
