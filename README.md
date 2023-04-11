@@ -127,16 +127,16 @@ The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 
 
 
 CRISP-DM methodology widely used in data mining and AI development. Method provides structured approach to planning project. There are six phases:
-    1. Business Understanding: here objectives and requirements are defined. Understanding of the problem and setting goals that the project should achieve.
-    2. Data Understanding: data collected and explored so we have more understanding of data.
-    3. Data Preparation: Data is cleaned , transformed and prepared for analysis and modeling
-    4. Modeling: different rechnique applied to the data and results are evaluated for efectiveness for meeting our goals
-    5. Evaluation: model results are evaluated if they met project objectives. Assessing accuracy, reliability, validity and if model suitable for deployment.
-    6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
+1. Business Understanding: here objectives and requirements are defined. Understanding of the problem and setting goals that the project should achieve.
+2. Data Understanding: data collected and explored so we have more understanding of data.
+3. Data Preparation: Data is cleaned , transformed and prepared for analysis and modeling
+4. Modeling: different rechnique applied to the data and results are evaluated for efectiveness for meeting our goals
+5. Evaluation: model results are evaluated if they met project objectives. Assessing accuracy, reliability, validity and if model suitable for deployment.
+6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
 
 
 
-### Model
+# Model
 
 Creating model and settind hyperparameters with hidden layers been achieved with trial and error way.
 This structure appear in my case best one according to my goals
@@ -151,12 +151,14 @@ This structure appear in my case best one according to my goals
 
 ### Which hyperparameters I choose
 
-- layers
-- number of neurons
-- kernel size
-- activation function (not sigmoid) 
-- output
-- dropout
+- Conv2D - input layer been chosen as it is subtype of Neural Network that is mainly used for image recognition. Two-dimensional as it is typicall for image data, one-dimensional typically used for time series or text, three-dimensional ussed for 3d image data like MRI or CT in medicine
+- Kernel size - is set to 3x3. This filter slide across input tensor in horizontical and vertical directions (stride =1). As a result of this filter creates map of features or pattern of input data. Larger kernel will create more trainable parameters that could lead to overfitting
+- Activation - for input and hidden layers is ReLu as it is fast and computaional light
+- MaxPooling2D - extracts the most import features after convolutional layer and reduce computational cost as well as number of parameters. **Max**pooling helps us to choose lighter pixels and in our case we are intersted in brighter ones as infected leaves are brighter due to fungus if we would be interested in darker pixels we would use **Min**pooling
+- Flatten - converts multidimentional tensor to one-dimensional and we need these as fully conected layer takes as input only one-dimensional vectors.
+- Dense - or fully connected layer where each neuron connected to each neuron from previous neuron. Number of neurons depends on complexity of task. 
+- Dropout - layer that turns of neurons in a specified layer so they don't contribute to a next layer. We turn off 50% of neurons to avoid overfitting
+
 
 # hidden layers activation function https://wandb.ai/shweta/Activation%20Functions/reports/Activation-Functions-Compared-With-Experiments--VmlldzoxMDQwOTQ SWISH in particular outperform relu
 
@@ -167,19 +169,12 @@ This structure appear in my case best one according to my goals
 
 # difference between categorical and binary cross entropy https://stackoverflow.com/questions/52965686/difference-between-categorical-and-binary-cross-entropy
 
-## layers
--
--
--
--
-## model creation
 
--
--
--
--
+## Model compilatiom
 
-
+- Loss: compares target and predicted values of training data. Categorical_crossentropy used since we are using softmax.
+- Optimizer: algorithm that adjusts the parameters of a neural network during training in order to minimize the error between the predicted output and the actual output. Used ____ as it perfom best in our case
+- Metrics: accuracy used as it provides simple and intuitive measure of how well model is performing. Measures percentage of correctly predicted examples
 
 ## Business Requirement 1: Data Visualization
 
@@ -278,7 +273,8 @@ Business requirements #3
 
 # Page 4: Project Hypothesis and Validation
 
-- Bloack for each project hypothesis, describe the conclusion and how you validated.
+- Block for each project hypothesis, describe the conclusion and how you validated.
+
 
 
 # Page 5: ML Performance Metrics
@@ -287,6 +283,16 @@ Business requirements #3
 - Model History - Accuracy and Losses
 - Model evaluation resul
 
+
+# Bugs
+
+When I was creating plots from a model history I got this error
+
+![Bug](readme_assets/bug.jpg)
+
+
+Bug - Every time I was trying to create plot right after evaluation of the model I got such kind of error or just None
+Fix - It is impossible to extract history after evaluation as that is reseting history of the model, so creating plots should be doe beore evaluating model
 
 # Technologies used
 
@@ -343,8 +349,7 @@ Business requirements #3
 # Credits
 
 - Leaves dataset was downloaded from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) and created by [Code Institute](https://www.kaggle.com/codeinstitute)
-- Fungus description taken from [RHS](https://www.rhs.org.uk/disease/powdery-mildews) and [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew#:~:text=Powdery%20mildew%20is%20one%20of,ground%20part%20of%20the%20plant.
--)
+- Fungus description taken from [RHS](https://www.rhs.org.uk/disease/powdery-mildews) and [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew#:~:text=Powdery%20mildew%20is%20one%20of,ground%20part%20of%20the%20plant)
 - CRISP-DM steps taken from [Think Insights](https://thinkinsights.net/data/crisp-dm/)
 
 
