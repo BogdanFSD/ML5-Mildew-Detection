@@ -42,16 +42,16 @@ Our customer Farmy & Foody contacted us to resolve non trivial issue in agricult
 1. *Hypothesis:* Leaves that are infected have marks compare to heathy ones
     - **Validation** Understand of how Powdery Mildew look like.
 
-2. *Hypothesis:* Which activation functions perfoms better and why for our task
-    - **Validation** Understand how each of trained functions working and perfoming whie training.
+2. *Hypothesis:* If image contains some part of leaf (image would contain tree instead of a leaf)
+    - **Validation** Cut available dataset in different proportions and train model on it
 
-3. *Hypothesis:* When it perfomed better
-    - **Validation** colors, filters algorithms.
+3. *Hypothesis:* Which activation functions is better perfomed at this model. Compare them.
+    - **Validation** Each activation function is better for certain problem. Understand differences between them. Train same models with different activatoin functions
 
 
 ### Hypothesis 1 
 
-> Leaves that are infected have marks compare to heathy ones
+ -  Leaves that are infected have marks compare to heathy ones
 
 If leaf is infected by Powdery Mildev we would see some classical marks as: pale yellow leaf spots, round lesions on either side which will develope to white powdery spots on the leaves. This understanding we should provide to our system. But how? Firstly, we need transform, split and basically prepare our data for learning for  best learning outcome.
 
@@ -89,14 +89,32 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 ### Hypothesis 2
 
-> Which activation functions perfoms better and why for our task
+ - Image that contains overlapped or partial image of the leaf
 
+
+Our dataset consist of images of a single leaf which might be not easy to collect as this requires human. And if you have thousands of trees making photo of each leacf of each tree might be a problem on a big scale. One of the solutions might be taking a picture of a tree itself from different angles ( let's say 4 so 1 image per side of a tree) and with high resolution camera. Which will make entire process much faster. On the other hand we receive just 4 images of couple thousands (depends on size of a tree) of leaves which might be overlaped by each other. In one picture we would have both healthy and infected leaves, shape and form of the leaf would be different due to overlaping with another leaf or a branch. Idea is to check if this will decrease accuracy of the model
+To validate we will use dataset of artificially modified leaves to simulate overlapping and other conditions. dataset will contain both normal images and partiall images of the leaves.
 
 
 
 ### hypothesis 3
 
-if we put images upside down
+ - Which activation functions is better perfomed at this model. Compare them.
+
+
+ If we would generalize of what our model should do we can escribe this like image classification. Classification could be just between 2 classes - binary or containing more than 2 classes - multiclass. Our model consists of just 2 classes so we can think about it more like binary classification
+In this case there are activation functions created for this like **sigmoid**. Each solutions has some limitations. Output would consist only of 1 node. As 1 is maximum value than if result if more than 0.5 we would receive class healthy and less than 0.5 infected. Model learns patterns during backpropogation. Backpropogation this is a process when output of the input data goes through reevaluation in that layer so basically sending in backwards wo update gradient. Which will lead to accuracy improvement and smaller loss. Looks like no problems but actually it is one. 
+
+Sigmoid **saturate and kill gradient**. Because sigmoid between 0 and 1 function produce values that are close to 0 or 1 and gradient (learning rate) becomes very small making model difficult to learn as gradients become to small. With time gradient becomes too small or "killed" as a result model will converge slowly of fail to do so.
+
+Our problem could be cosidered as multi-class as we have 2 classes and here **softmax** function could be used with 1 node per each class in the output so 2 in our case. Major difference is that softmax calculates probability disttribution based on previous layers and formula inside of the function where max value is 1. Class that is closer to 1 would be chosen. One of the limitation that classes should be mutually exclusive and sensitivity to outliers as softmax use exponential calculation. 
+
+In order to understand we will plot some charts with learning curve which will tell us how model been learning during time. We would look if model overfit or underfit.
+Chart creates based of ammount of Epoch for x-axis. Epochs are how many times modle wpassed through dataset and adjust parameters. Accuracy is a number of when model made correct prediciont. and Loss whan model failed and made wrong prediction. 
+
+On our chart if we would see that our lines perfectly follows each other that is not a good sign as that means model ovetfitted and just learned patterns of a given dataset on the other hand underfitting is when lines parallel or not following data at all also not good as that means that our model cannot learn patterns of the data and we need to change our parameters. So we are looking for something in between so model can understand pattern on training dataset and give correect prediction on new unseen data
+
+
 
 # Rationale to map the business requirements to the Data Visualizations and ML tasks
 
