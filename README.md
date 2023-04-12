@@ -97,7 +97,7 @@ To validate we will use dataset of artificially modified leaves to simulate over
 
 
 
-### hypothesis 3
+### Hypothesis 3
 
  - Which activation functions is better perfomed at this model. Compare them.
 
@@ -120,6 +120,8 @@ On our chart if we would see that our lines perfectly follows each other that is
 
 The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 output layer.
 
+
+
 ### CRISP-DM Method
 
 
@@ -134,6 +136,9 @@ CRISP-DM methodology widely used in data mining and AI development. Method provi
 5. Evaluation: model results are evaluated if they met project objectives. Assessing accuracy, reliability, validity and if model suitable for deployment.
 6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
 
+
+Source:
+[CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/)
 
 
 # Model
@@ -160,14 +165,8 @@ This structure appear in my case best one according to my goals
 - Dropout - layer that turns of neurons in a specified layer so they don't contribute to a next layer. We turn off 50% of neurons to avoid overfitting
 
 
-# hidden layers activation function https://wandb.ai/shweta/Activation%20Functions/reports/Activation-Functions-Compared-With-Experiments--VmlldzoxMDQwOTQ SWISH in particular outperform relu
-
-
-# https://stackoverflow.com/questions/41908379/keras-plot-training-validation-and-test-set-accuracy  / plot
-
-# https://towardsdatascience.com/loss-functions-and-their-use-in-neural-networks-a470e703f1e9#:~:text=The%20most%20commonly%20used%20loss,of%20the%20pre%2Dset%20categories. / losses
-
-# difference between categorical and binary cross entropy https://stackoverflow.com/questions/52965686/difference-between-categorical-and-binary-cross-entropy
+Source:
+[Activation functions](https://wandb.ai/shweta/Activation%20Functions/reports/Activation-Functions-Compared-With-Experiments--VmlldzoxMDQwOTQ)
 
 
 ## Model compilatiom
@@ -175,6 +174,11 @@ This structure appear in my case best one according to my goals
 - Loss: compares target and predicted values of training data. Categorical_crossentropy used since we are using softmax.
 - Optimizer: algorithm that adjusts the parameters of a neural network during training in order to minimize the error between the predicted output and the actual output. Used ____ as it perfom best in our case
 - Metrics: accuracy used as it provides simple and intuitive measure of how well model is performing. Measures percentage of correctly predicted examples
+
+Source:
+[Loss functions](https://towardsdatascience.com/loss-functions-and-their-use-in-neural-networks-a470e703f1e9#:~:text=The%20most%20commonly%20used%20loss,of%20the%20pre%2Dset%20categories.)
+[Optimizer](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-deep-learning-optimizers/)
+
 
 ## Business Requirement 1: Data Visualization
 
@@ -284,6 +288,9 @@ Business requirements #3
 - Model evaluation resul
 
 
+- Pages for Streamlit Dashboard are from [Code Institute](https://github.com/Code-Institute-Solutions/WalkthroughProject01)
+
+
 # Bugs
 
 When I was creating plots from a model history I got this error
@@ -292,7 +299,8 @@ When I was creating plots from a model history I got this error
 
 
 Bug - Every time I was trying to create plot right after evaluation of the model I got such kind of error or just None
-Fix - It is impossible to extract history after evaluation as that is reseting history of the model, so creating plots should be doe beore evaluating model
+Fix - It is impossible to extract history after evaluation as that is reseting history of the model, so creating plots should be doтe beore evaluating model
+Found this question in [Stack Overflow](https://stackoverflow.com/questions/62299804/in-tensorflow-2-2-0-my-model-history-history-is-empty-after-fitting-the-data-al) very helpfull.
 
 # Technologies used
 
@@ -351,8 +359,6 @@ Fix - It is impossible to extract history after evaluation as that is reseting h
 - Leaves dataset was downloaded from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) and created by [Code Institute](https://www.kaggle.com/codeinstitute)
 - Fungus description taken from [RHS](https://www.rhs.org.uk/disease/powdery-mildews) and [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew#:~:text=Powdery%20mildew%20is%20one%20of,ground%20part%20of%20the%20plant)
 - CRISP-DM steps taken from [Think Insights](https://thinkinsights.net/data/crisp-dm/)
-
-
 - Template for this project belongs to [CodeInstitute](https://codeinstitute.net/)
 - Jupiter notebooks and pages for Dashboard are from [CodeInstitute Walkthrough](https://github.com/GyanShashwat1611/WalkthroughProject01)
 
