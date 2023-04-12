@@ -96,6 +96,24 @@ Our dataset consist of images of a single leaf which might be not easy to collec
 To validate we will use dataset of artificially modified leaves to simulate overlapping and other conditions. dataset will contain both normal images and partiall images of the leaves.
 
 
+Model was similar the only difference was that we cut our images in 3 similar pieces which made dataset 3 times bigger, model showed worst results in accuracy and loss due to higher amout of images. Model overfitts as expected. Model with images of full leaves showed better results in learning curves gaps between training and validation as well learning rate much more consistent.
+
+
+Loss/Accuracy plot model with leaves cut in 3 parts
+
+
+![loss/accuracy plot](outputs/v1_cut/model_big_plot.png)
+
+
+Loss/Accuracy plot model with normal leaf
+
+![loss/accuracy plot normal](outputs/v2_softmax/model_big_plot.png)
+
+
+
+Having images of full leaves shows better result compare to leaves cut in a pieces. 
+
+
 
 ### Hypothesis 3
 
@@ -115,8 +133,28 @@ Chart creates based of ammount of Epoch for x-axis. Epochs are how many times mo
 On our chart if we would see that our lines perfectly follows each other that is not a good sign as that means model ovetfitted and just learned patterns of a given dataset on the other hand underfitting is when lines parallel or not following data at all also not good as that means that our model cannot learn patterns of the data and we need to change our parameters. So we are looking for something in between so model can understand pattern on training dataset and give correect prediction on new unseen data
 
 
+Model was trained during 10 epochs with same hyperparameters on both examples. Both model showing overfitting as expected. Although **sofmax** activation function showed better result in learning rate and showed smaller gap in training/validation sets
+
+
+Loss/Accuracy plot model with sigmoid
+
+
+![loss/accuracy plot sigmoid](outputs/v1/model_big_plot.png)
+
+
+Loss/Accuracy plot model with sofmax
+
+![loss/accuracy plot normal](outputs/v2_softmax/model_big_plot.png)
+
+
+After testing both models we choose softmax as activation function.
+
+
+
 
 # Rationale to map the business requirements to the Data Visualizations and ML tasks
+
+
 
 The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 output layer.
 
