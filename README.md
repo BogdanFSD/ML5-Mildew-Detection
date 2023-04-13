@@ -6,14 +6,13 @@
 3. [Hypothesis and validation](#hypothesis-and-validation)
 4. [Rationale for the model](#model-rationale)
 5. [CRISP-DM Method](#crisp-dm-method)
-6. [Implementation of the Business Requirements](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
+6. [Implementation of the Business Requirements](#rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
 7. [ML Business case](#ml-business-case)
 8. [Dashboard design](#dashboard-design-streamlit-app-user-interface)
-9. [CRISP DM Process](#the-process-of-cross-industry-standard-process-for-data-mining)
-10. [Bugs](#bugs)
-11. [Technologies used](#technologies-used)
-12. [Deployment](#deployment)
-13. [Credits](#credits)
+9. [Bugs](#bugs)
+10. [Technologies used](#technologies-used)
+11. [Deployment](#deployment)
+12. [Credits](#credits)
 
 
 
