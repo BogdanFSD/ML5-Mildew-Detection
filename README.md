@@ -42,10 +42,10 @@ Our customer Farmy & Foody contacted us to resolve non trivial issue in agricult
 1. *Hypothesis:* Leaves that are infected have marks compare to heathy ones
     - **Validation** Understand of how Powdery Mildew look like.
 
-2. *Hypothesis:* If image contains some part of leaf (image would contain tree instead of a leaf)
+2. *Hypothesis:* If image contains some part of leaf (image would contain entire tree instead of a leaf)
     - **Validation** Cut available dataset in different proportions and train model on it
 
-3. *Hypothesis:* Which activation functions is better perfomed at this model. Compare them.
+3. *Hypothesis:* Which activation functions is better perfomed at this model. 
     - **Validation** Each activation function is better for certain problem. Understand differences between them. Train same models with different activatoin functions
 
 
@@ -89,7 +89,7 @@ System is capable of detecting differences in our leaves dataset so our learning
 
 ### Hypothesis 2
 
- - Image that contains overlapped or partial image of the leaf
+ - Image that contains overlap or partial image of the leaf
 
 
 Our dataset consist of images of a single leaf which might be not easy to collect as this requires human. And if you have thousands of trees making photo of each leacf of each tree might be a problem on a big scale. One of the solutions might be taking a picture of a tree itself from different angles ( let's say 4 so 1 image per side of a tree) and with high resolution camera. Which will make entire process much faster. On the other hand we receive just 4 images of couple thousands (depends on size of a tree) of leaves which might be overlaped by each other. In one picture we would have both healthy and infected leaves, shape and form of the leaf would be different due to overlaping with another leaf or a branch. Idea is to check if this will decrease accuracy of the model
@@ -117,7 +117,7 @@ Having images of full leaves shows better result compare to leaves cut in a piec
 
 ### Hypothesis 3
 
- - Which activation functions is better perfomed at this model. Compare them.
+ - Which activation functions is better perfomed at this model. 
 
 
  If we would generalize of what our model should do we can escribe this like image classification. Classification could be just between 2 classes - binary or containing more than 2 classes - multiclass. Our model consists of just 2 classes so we can think about it more like binary classification

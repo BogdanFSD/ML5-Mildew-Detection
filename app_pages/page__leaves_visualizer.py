@@ -41,12 +41,19 @@ def page_leaves_visualizer_body():
     if st.checkbox("Image Montage"): 
       st.write("* To refresh the montage, click on the 'Create Montage' button")
       my_data_dir = 'inputs/cherryleaves_data/cherry-leaves'
-      labels = os.listdir(my_data_dir+ '/validation')
+      dir1 = my_data_dir + '/validation'
+      dir2 = my_data_dir + '/cut/cherry-leaves/validation'
+      labels = os.listdir(dir1) + os.listdir(dir2)
       label_to_display = st.selectbox(label="Select label", options=labels, index=0)
-      if st.button("Create Montage"):      
-        image_montage(dir_path= my_data_dir + '/validation',
+      if st.button("Create Montage"):
+        if label_to_display in ['healthy_cut', 'powdery_mildew_cut']:
+          image_montage(dir_path = dir2,
                       label_to_display=label_to_display,
                       nrows=8, ncols=3, figsize=(10,25))
+        else:
+          image_montage(dir_path= dir1,
+                        label_to_display=label_to_display,
+                        nrows=8, ncols=3, figsize=(10,25))
       st.write("---")
 
 
