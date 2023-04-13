@@ -375,6 +375,22 @@ Found this question in [Stack Overflow](https://stackoverflow.com/questions/6229
 9. Once deployed you will see link where you can access your app.
 
 
+## Render deployment
+
+1. Delete Procfile, runtime.txt commit and push as this files are not required for deployment and makes repo cleaner
+2. Log in to profile and click "New +" button in upper right corner and than choose "Web service"
+3. Connec you relevant repo in search area
+4. Next choose name, select "Python 3" in Environment and switch Branch to "main"
+5. Set Build Command > pip install -r requirements.txt && ./setup.sh
+6. Start command would be " streamlit run app.py"
+7. Choosing "Free" option if we don't want to pay
+8. Go down and click "Advanced"
+9. Hit "Add Enviromental Variable"
+10. Add key: PORT and value:8501(number of port you can find in streamlit documentation)
+11. Select "Auto Deploy" if you don't wat to deploy manually your every push
+12. Hit "Create Web Service" wait and enjoy!
+
+
 
 ## Forking
 
