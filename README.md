@@ -4,15 +4,15 @@
 1. [Dataset Content](#dataset-content)
 2. [Business Requirements](#business-requirements)
 3. [Hypothesis and validation](#hypothesis-and-validation)
-4. [Rationale for the model](#the-rationale-for-the-model)
-5. [Trial and error](#trial-and-error)
+4. [Rationale for the model](#model-rationale)
+5. [CRISP-DM Method](#crisp-dm-method)
 6. [Implementation of the Business Requirements](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
 7. [ML Business case](#ml-business-case)
 8. [Dashboard design](#dashboard-design-streamlit-app-user-interface)
 9. [CRISP DM Process](#the-process-of-cross-industry-standard-process-for-data-mining)
 10. [Bugs](#bugs)
-11. [Deployment](#deployment)
-12. [Technologies used](#technologies-used)
+11. [Technologies used](#technologies-used)
+12. [Deployment](#deployment)
 13. [Credits](#credits)
 
 
@@ -26,7 +26,7 @@
 - This project based on fictious story to apply machine learning algorithms to solve problem which later on could be used in real world scenario.
 
 
-## Business Requirements
+# Business Requirements
 
 Our customer Farmy & Foody contacted us to resolve non trivial issue in agricultural sector. And we are trying to create Machine Learning system that can help. Core problem is cherry leaves that are infected by fungus (Powdery Mildew). At the moment this process takes around 30 minutes per tree. Infected trees treated with fungicide. Due to size of customers (thousands trees all over the country) this process could be time consuming. In order to increase efficiency one of the solutions is Machine Learning model. Our system should make a decision based on an image of cherry leaves and give answer whether it is "Healthy" or "Infected"
 
@@ -37,7 +37,7 @@ Our customer Farmy & Foody contacted us to resolve non trivial issue in agricult
 3.  Receiving prediction report of leaves.
 
 
-## Hypothesis and validation
+# Hypothesis and validation
 
 1. *Hypothesis:* Leaves that are infected have marks compare to heathy ones
     - **Validation** Understand of how Powdery Mildew look like.
@@ -152,34 +152,7 @@ After testing both models we choose softmax as activation function.
 
 
 
-# Rationale to map the business requirements to the Data Visualizations and ML tasks
-
-
-
-The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 output layer.
-
-
-
-### CRISP-DM Method
-
-
-![CRISP-DM](readme_assets/CRISP_DM.jpg)
-
-
-CRISP-DM methodology widely used in data mining and AI development. Method provides structured approach to planning project. There are six phases:
-1. Business Understanding: here objectives and requirements are defined. Understanding of the problem and setting goals that the project should achieve.
-2. Data Understanding: data collected and explored so we have more understanding of data.
-3. Data Preparation: Data is cleaned , transformed and prepared for analysis and modeling
-4. Modeling: different rechnique applied to the data and results are evaluated for efectiveness for meeting our goals
-5. Evaluation: model results are evaluated if they met project objectives. Assessing accuracy, reliability, validity and if model suitable for deployment.
-6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
-
-
-Source:
-[CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/)
-
-
-# Model
+# Model rationale
 
 Creating model and settind hyperparameters with hidden layers been achieved with trial and error way.
 This structure appear in my case best one according to my goals
@@ -192,7 +165,7 @@ This structure appear in my case best one according to my goals
 
 
 
-### Which hyperparameters I choose
+## Which hyperparameters I choose
 
 - Conv2D - input layer been chosen as it is subtype of Neural Network that is mainly used for image recognition. Two-dimensional as it is typicall for image data, one-dimensional typically used for time series or text, three-dimensional ussed for 3d image data like MRI or CT in medicine
 - Kernel size - is set to 3x3. This filter slide across input tensor in horizontical and vertical directions (stride =1). As a result of this filter creates map of features or pattern of input data. Larger kernel will create more trainable parameters that could lead to overfitting
@@ -216,6 +189,38 @@ Source:
 Source:
 [Loss functions](https://towardsdatascience.com/loss-functions-and-their-use-in-neural-networks-a470e703f1e9#:~:text=The%20most%20commonly%20used%20loss,of%20the%20pre%2Dset%20categories.)
 [Optimizer](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-deep-learning-optimizers/)
+
+
+
+### CRISP-DM Method
+
+
+![CRISP-DM](readme_assets/CRISP_DM.jpg)
+
+
+CRISP-DM methodology widely used in data mining and AI development. Method provides structured approach to planning project. There are six phases:
+1. Business Understanding: here objectives and requirements are defined. Understanding of the problem and setting goals that the project should achieve.
+2. Data Understanding: data collected and explored so we have more understanding of data.
+3. Data Preparation: Data is cleaned , transformed and prepared for analysis and modeling
+4. Modeling: different rechnique applied to the data and results are evaluated for efectiveness for meeting our goals
+5. Evaluation: model results are evaluated if they met project objectives. Assessing accuracy, reliability, validity and if model suitable for deployment.
+6. Deployment: model deployed and running. Results monitored to ensure that the model continues to meet project objectives
+
+
+Source:
+[CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/)
+
+
+
+
+
+# Rationale to map the business requirements to the Data Visualizations and ML tasks
+
+
+
+The model has 1 input layer, 3 hidden layers (2 ConvLayer, 1 FullyConnected), 1 output layer.
+
+
 
 
 ## Business Requirement 1: Data Visualization
