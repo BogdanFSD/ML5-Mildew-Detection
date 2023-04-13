@@ -1,6 +1,10 @@
 *.zip
-inputs/cherryleaves_data/cherry-leaves
-outputs
+outputs/v2_cut/mildew_detection_softmax.h5
+outputs/v1/mildew_detection.h5
+
+jupyter_notebooks/Data_Collection_cut.ipynb
+jupyter_notebooks/Data_Visualization_cut.ipynb
+jupyter_notebooks/Evaluation_cut.ipynb
 
 
 readme_assets/*

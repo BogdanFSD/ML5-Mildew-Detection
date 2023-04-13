@@ -1,2 +1,2 @@
-outputs/v2_cut
-outputs/v2_softmax
+outputs/v2_cut/mildew_detection_softmax.h5
+outputs/v1/mildew_detection.h5
