@@ -1,4 +1,4 @@
-![Project look](###)
+![Project look](readme_assets/mock.jpg)
 
 ## Table of Contents
 1. [Dataset Content](#dataset-content)
@@ -17,7 +17,7 @@
 
 
 
-## App deployed hete [ml5-mildew-detection_herokuapp](LINK)
+## App deployed here [ml5-mildew-detection_herokuapp](https://ml5-mildew-detection.onrender.com/)
 
 # Dataset Content
 
@@ -102,7 +102,7 @@ Model was similar the only difference was that we cut our images in 3 similar pi
 Loss/Accuracy plot model with leaves cut in 3 parts
 
 
-![loss/accuracy plot](outputs/v1_cut/model_big_plot.png)
+![loss/accuracy plot](outputs/v2_cut/model_big_plot.png)
 
 
 Loss/Accuracy plot model with normal leaf

@@ -41,7 +41,7 @@ def page_project_hypothesis_body():
         f" Our model tend to overfit and made bad predictions on a new dataset of croped leaves."
     )
 
-    image_model_cut = Image.open('outputs/v1_cut/model_big_plot.png')
+    image_model_cut = Image.open('outputs/v2_cut/model_big_plot.png')
     st.image(image_model_cut, caption='Cut images loss/accuracy perfomance')
 
     st.write("### Hypotesis 3 ")
