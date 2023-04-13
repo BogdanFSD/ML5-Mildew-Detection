@@ -1,6 +1,7 @@
 *.zip
 inputs/cherryleaves_data/cherry-leaves
-
+outputs/v2_cut
+outputs/v2_softmax
 
 
 
